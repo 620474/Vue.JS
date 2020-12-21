@@ -1,0 +1,60 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link href="src/css/1.css" rel="stylesheet">
+</head>
+<body>
+<div id="app">
+    <header>
+        <h3>{{sitename}}</h3>
+    </header>
+    <main>
+        <div>
+            <div>
+                <h1 v-text="product.title"></h1>
+                <figure>
+                    <img v-bind:src="product.image" align="left">
+                </figure>
+                <div>
+                    <p v-if="visible">{{product.description}}</p>
+                    <button @click="visible = !visible"> {{visible ? 'Скрыть описание' : 'Отобразить описание'}}
+                    </button>
+                    <p>Издательство: {{product.publishing}}</p>
+                    <p>Год: {{product.year}}</p>
+                    <h4>Стоимость: {{product.price}}</h4>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <nav class="clear">
+        <ul id="menu">
+            <li @click="menu='trailer'">
+                Трейлер
+            </li>
+            <li @click="menu='authors'">
+                Авторы
+            </li>
+        </ul>
+    </nav>
+    <div v-if='menu==="trailer"'>
+        <iframe width="700" height="400" src="https://www.youtube.com/embed/aSrFWinrkeQ" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+    </div>
+    <div v-if='menu==="authors"'>
+        Руководитель: Адам Бадовский
+        Продюсер: Рихард Божимовский
+        Геймдизайнер: Конрад Томашкевич, Михал Добровольский, Павел Саско
+        Сценарист: Марчин Блача, Якуб Шамалек, Станислав Свенцицкий
+        Художник: Павел Мельничук, Катаржина Редесюк,
+        Композитор: Марцин Пшибылович, Пётр Адамчик, Пол Леонард-Морган
+    </div>
+</div>
+
+<script src="src/js/1.js">
+
+</script>
+</body>
+</html>
