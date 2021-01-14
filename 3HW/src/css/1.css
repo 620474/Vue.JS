@@ -1,0 +1,28 @@
+
+img {
+    width: 400px;
+    height: auto;
+
+}
+header {
+    text-align: center;
+
+}
+body {
+    background-image: url("../1.png");
+    color: yellow;
+}
+
+#menu {
+    padding: 15px;
+}
+
+
+
+li {
+    font-size: 50px;
+    display: inline;
+    color: greenyellow;
+    margin: 13px;
+
+}

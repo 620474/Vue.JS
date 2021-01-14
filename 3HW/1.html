@@ -1,0 +1,29 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+<div id="app">
+    <h2>1 задание</h2>
+    <p v-if="input" @click="change">{{text}}</p>
+    <input v-if="!input" type="text" v-model="newText">
+    <button @click="change">Сохранить</button>
+
+    <h2>2 задание</h2>
+    <input type="text" v-model="search">
+    <div v-for="post in jsonPost" :key="post.id">
+        <div v-if="post.title.includes(search)">
+            <h3>{{post.title}}</h3>
+            <p>
+                {{post.body}}
+            </p>
+        </div>
+    </div>
+</div>
+
+<script src="src/js/1.js">
+
+</script>
+</body>
+</html>
