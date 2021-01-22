@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Title</title>
+    <link rel="stylesheet" href="./public/styles.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="content">
+            <div class="input__main">
+                <div class="title">To Do APP</div>
+
+                <div class="input__group">
+                    <input class="input__text" type="text" v-model="input">
+                    <div class="input__button" @click="addTask">Добавить</div>
+                </div>
+                <div class="todo__group">
+                    <ul>
+                        <li class="todo__item" v-for="(task, index) in tasks" :key="index">
+                            {{task.name}}
+                            <div class="buttons">
+                                <div class="editBtn" @click="editTask(index)"><img class="editBtn__item"
+                                        src="./public/img/edit.svg" alt="edit">
+                                </div>
+                                <div class="deleteBtn" @click="deleteTask(index)"><img class="deleteBtn__item"
+                                        src="./public/img/trash.svg" alt="trash"></div>
+                                <input v-if="visible" type="text" v-model="editInput">
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <script src="./1.js"></script>
+</body>
+
+</html>
